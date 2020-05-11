@@ -16,4 +16,13 @@ describe '#Parcel' do
       expect(Parcel.all()).to(eq({}))
     end
   end
+
+  describe("#save") do
+    it ("saves a parcel") do
+      parcel = Parcel.new(5, 7, 13)
+      parcel.save()
+      parcel2 = Parcel.new(3,8, 10)
+      expect(Parcel.all).to(eq({parcel, parcel2}))
+    end
+  end
 end
