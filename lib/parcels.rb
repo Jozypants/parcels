@@ -9,6 +9,6 @@ class Parcel
   end
 
   def self.all()
-  
+    @@parcels
   end
 end
