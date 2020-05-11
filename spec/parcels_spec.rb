@@ -57,8 +57,14 @@ describe '#Parcel' do
     end
   end
   
-  # describe(".find") do
-  #   it("finds a parcel by")
-  # end
+  describe("#update") do
+    it("updates a parcel's size") do
+      parcel = Parcel.new(5,7,13, nil)
+      resize_parcel(6, 8, 12)
+      expect(parcel.length.width.height).to(eq(6, 8, 12))
+      # expect(parcel.width).to(eq(8))
+      # expect(parcel.height).to(eq(12))
+    end
+  end
 
 end
