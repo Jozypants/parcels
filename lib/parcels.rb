@@ -1,21 +1,21 @@
 class Parcel
   attr_reader :length, :width, :height, :id
-  @@parcels = []
+  @@parcels = {}
   @@package_default = 0
   
   def initialize(length, width, height, id)
-    @length = length
-    @width = width
-    @height = height
+    @length = length.to_i
+    @width = width.to_i
+    @height = height.to_i
     @id = id || @@package_default += 1
   end
 
   def self.all()
-    @@parcels
+    @@parcels.values()
   end
 
   def save
-    @@parcels.push(Parcel.new(self.length, self.width, self.height, self.id))
+    @@parcels[self.id] = Parcel.new(self.length, self.width, self.height, self.id)
   end
 
   def ==(parcel_to_compare)
@@ -23,7 +23,8 @@ class Parcel
   end
 
   def self.clear
-    @@parcels = []
+    @@parcels = {}
+    @@package_default = 0
   end
 
   def volume_calc
@@ -35,5 +36,8 @@ class Parcel
     @width = new_width
     @height = new_height
   end
-  
+
+  def delete
+    @@parcels.delete(self.id)
+  end
 end

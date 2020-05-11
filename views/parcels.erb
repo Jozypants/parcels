@@ -1,0 +1,14 @@
+<h1> Peter's Parcel Postage</h1>
+<h3>Current Parcels</h3>
+
+<% if @parcels.any? %>
+  <ul>
+    <% @parcels.each do |parcel| %>
+      <li>Package <%= parcel.id %>: <%= parcel.length%> x <%= parcel.width%> x <%= parcel.height%></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are currently no parcels to display.</p>
+<% end %>
+
+<a href="/parcels/new">Add a new parcel</a>

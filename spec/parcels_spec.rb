@@ -67,13 +67,13 @@ describe '#Parcel' do
     end
   end
   describe("#delete") do
-  it("delete a package by id") do
-    parcel = Parcel.new(5,7,9, nil)
-    parcel.save()
-    parcel2 = Parcel.new(8,9, 7, nil)
-    parcel.save()
-    parcel.delete()
-    expect(Parcel.all).to(eq([parcel]))
+    it("delete a package by id") do
+      parcel = Parcel.new(5,7,9, nil)
+      parcel.save()
+      parcel2 = Parcel.new(8,9, 7, nil)
+      parcel2.save()
+      parcel.delete()
+      expect(Parcel.all).to(eq([parcel2]))
     end
   end
 end
