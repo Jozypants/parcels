@@ -29,5 +29,11 @@ class Parcel
   def volume_calc
     @length * @width * @height
   end
+
+  def resize_parcel(new_length, new_width, new_height)
+    @length = new_length
+    @width = new_width
+    @height = new_height
+  end
   
 end

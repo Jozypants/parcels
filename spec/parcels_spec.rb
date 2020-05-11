@@ -60,11 +60,20 @@ describe '#Parcel' do
   describe("#update") do
     it("updates a parcel's size") do
       parcel = Parcel.new(5,7,13, nil)
-      resize_parcel(6, 8, 12)
-      expect(parcel.length.width.height).to(eq(6, 8, 12))
-      # expect(parcel.width).to(eq(8))
-      # expect(parcel.height).to(eq(12))
+      parcel.resize_parcel(6, 8, 12)
+      expect(parcel.length).to(eq(6))
+      expect(parcel.width).to(eq(8))
+      expect(parcel.height).to(eq(12))
     end
   end
-
+  describe("#delete") do
+  it("delete a package by id") do
+    parcel = Parcel.new(5,7,9, nil)
+    parcel.save()
+    parcel2 = Parcel.new(8,9, 7, nil)
+    parcel.save()
+    parcel.delete()
+    expect(Parcel.all).to(eq([parcel]))
+    end
+  end
 end
