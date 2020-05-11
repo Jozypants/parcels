@@ -1,11 +1,11 @@
 require 'rspec'
-require 'parcel'
+require 'parcels'
 
 describe '#Parcel' do
-  describe('#save') do
-  it("saves a parcel") do
-    parcel = Parcel.new()
-    expect.()to(eq())
+  describe('#Parcel') do
+    it("creates a new parcel object with a length of 5") do
+      parcel = Parcel.new(4, 7, 13)
+      expect(parcel.length).to(eq(5))
     end
   end
 end
