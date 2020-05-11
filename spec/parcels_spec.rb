@@ -54,6 +54,8 @@ describe '#Parcel' do
     it("calculates the volume of a parcel") do
       parcel = Parcel.new(5,7,13, nil)
       expect(parcel.volume_calc).to(eq(455))
+    end
+  end
   
   # describe(".find") do
   #   it("finds a parcel by")

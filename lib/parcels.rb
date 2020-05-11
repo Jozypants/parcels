@@ -27,7 +27,7 @@ class Parcel
   end
 
   def volume_calc
-
+    @length * @width * @height
   end
   
 end
