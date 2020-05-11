@@ -10,4 +10,5 @@ class Parcel
 
   def self.all()
   
+  end
 end
