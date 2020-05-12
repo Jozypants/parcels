@@ -40,4 +40,8 @@ class Parcel
   def delete
     @@parcels.delete(self.id)
   end
+
+  def self.find(id)
+    @@parcels[id]
+  end
 end

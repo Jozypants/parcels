@@ -27,3 +27,22 @@ post('/parcels') do
   @parcels = Parcel.all()
   erb(:parcels)
 end
+
+get('/parcels/:id') do
+  @parcel = parcel.find(params[:id].to_i())
+  erb(:parcel)
+end
+
+get('/parcels/:id/edit') do 
+  @parcel = Parcel.find(params[:id].to_i())
+  erb(:edit_parcel)
+end
+
+patch('/parcels/:id') do
+  @parcel = Parcel.find(params[:id].to_i())
+  @parcel.update(params[:length])
+  @parcel.update(params[:width])
+  @parcel.update(params[:height])
+  @parcels = Parcel.all
+  erb(:parcels)
+end
